@@ -11,18 +11,23 @@ $(document).ready(function() {
         $("#div1").css("border","2px solid black");
 
         if(city != "") {
+            
             $.ajax({
                 //for celsius i used metric system of temperature
                 url: 'http://api.openweathermap.org/data/2.5/find?q=' + city + "&units=metric" + "&appid=e0523e190398e4bc66293fbf167feaff", 
-                type: "GET",
+                type: "GET", //i took api with GET
                 dataType: "jsonp",
                 success: function(data) {
+                    
+                    //i checked the city name is exist or not
+                    
                     try {
                         $("#show").show();
                         console.log(data);
                         city2.html("<h3>Weather in " + city.toUpperCase() + "<p>")
                         celsius.html('<h4>' + data.list[0].main["temp"] + " °C<p></h4>");
-                        cases.html('<h4> Case: ' + data.list[0].weather[0].main + "</h4> Temperature Min: " + data.list[0].main.temp_min + " / Temperature Max: " + data.list[0].main.temp_max);
+                        cases.html('<h4> Case: ' + data.list[0].weather[0].main + "</h4> Temperature Min: " + data.list[0].main.temp_min +
+                        " / Temperature Max: " + data.list[0].main.temp_max);
                         $("#date").html("<h4>Your Locale Hour : </h4>" + date);
                         city = "";
                         $("hr").css("visibility","visible");
@@ -38,7 +43,10 @@ $(document).ready(function() {
                 }
             });
         }
+        
+        //if textbox is empty this block will be executed and will get alert
         else {
+            
             alert("Field cannot be empty");
         }
     });
