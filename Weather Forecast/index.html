@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Current Weather</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body style="background-color:crimson">
+    <div class="container jumbotron" style="margin-top:10px;" id="div1">
+        <h2 class="text-center" id="current">Current Weather</h2>
+    </div>
+    <div class="container jumbotron" id="div2">
+        <h4 class="text-center">Enter City Name:</h3>
+        <br>
+        <div class="row form-group form-inline" id="rowDiv">
+            <span style="margin-left: 420px;">
+               <input type="text" name="city" id="city" class="form-control" placeholder="Enter a city name...">
+               <button id="submitWeather" class="btn btn-dark">Submit</button>        
+            </span>
+        </div>
+        <hr style="visibility:hidden;">
+        <div id="show" class="text-center" >
+            <div id="weather-widget" class="weather-widget">
+                <h2 class="weather-widget__city-name" id="city2" style="margin-top:20px;"></h2>
+                <h3 class="weather-widget__temperature" id="celsius"></h3>
+                <p class="weather-widget__main" id="cases"></p>
+                <p id="date"></p>
+            </div>
+        </div>
+        <hr style="visibility:hidden;">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="weather.js"></script>
+</body>
+</html>
